@@ -8,13 +8,13 @@ EVERY 20 TICKS DO
             4 printed_logic_processor
         to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
     end
-    if source HAS < 4 printed_logic_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
+    if source HAS < 4 printed_logic_processor AND source HAS > 0 printed_logic_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
     INPUT
         1 redstone,
         1 printed_silicon,
         1 printed_logic_processor
     FROM source
-    OUTPUT to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
+    OUTPUT to inscribers slots 0-2, 4-6, 8-10, 12-14
     end
     FORGET
 
@@ -26,13 +26,13 @@ EVERY 20 TICKS DO
             4 printed_calculation_processor
         to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
     end
-    if source HAS < 4 printed_calculation_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
+    if source HAS < 4 printed_calculation_processor AND source HAS > 0 printed_calculation_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
     INPUT
         1 redstone,
         1 printed_silicon,
         1 printed_calculation_processor
     FROM source
-    OUTPUT to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
+    OUTPUT to inscribers slots 0-2, 4-6, 8-10, 12-14
     end
     FORGET
 
@@ -44,13 +44,13 @@ EVERY 20 TICKS DO
             4 printed_engineering_processor
         to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
     end
-    if source HAS < 4 printed_engineering_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
+    if source HAS < 4 printed_engineering_processor AND source HAS > 0 printed_engineering_processor AND source HAS >=1 printed_silicon AND source HAS >=1 redstone then
     INPUT
         1 redstone,
         1 printed_silicon,
         1 printed_engineering_processor
     FROM source
-    OUTPUT to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
+    OUTPUT to inscribers slots 0-2, 4-6, 8-10, 12-14
     end
     FORGET
 
@@ -62,21 +62,19 @@ EVERY 20 TICKS DO
             4 printed_accumulation_processor
         to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
     end
-    if source HAS < 4 printed_accumulation_processor AND source HAS >=1 printed_silicon AND source HAS >=1 fluix_dust then
+    if source HAS < 4 printed_accumulation_processor AND source HAS > 0 printed_accumulation_processor AND source HAS >=1 printed_silicon AND source HAS >=1 fluix_dust then
     INPUT
         1 fluix_dust,
         1 printed_silicon,
         1 printed_accumulation_processor
     FROM source
-    OUTPUT to EACH inscribers slots 0-2, 4-6, 8-10, 12-14
+    OUTPUT to inscribers slots 0-2, 4-6, 8-10, 12-14
     end
-    FORGET
 
+    FORGET
         INPUT logic_processor, engineering_processor, calculation_processor, accumulation_processor FROM inscribers SLOTS 3, 7, 11, 15
         OUTPUT TO pattern
     FORGET
-        INPUT calculation_processor FROM source
-        OUTPUT TO pattern
 END
 
 EVERY 200 TICKS DO
@@ -85,4 +83,3 @@ EVERY 200 TICKS DO
         OUTPUT TO source
     END
 END
-

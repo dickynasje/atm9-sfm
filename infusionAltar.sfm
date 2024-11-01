@@ -1,0 +1,15 @@
+name "infusion altar"
+-- pattern will push ingredient to buffer (with blocking mode enabled)
+-- move 1 item from slot 0 to middle altar
+-- move other to buffer2, buffer2 will pipe all to pedestal
+-- this code didn't handle result retrieval, please pipe it manually to the system again
+-- ps: this exact same code can be used for awakening altar as well
+every 20 ticks do
+    if altar has lt 1then
+        input 1 from buffer slots 0
+        output to altar
+        forget
+        input from buffer
+        output to buffer2
+    end
+end
