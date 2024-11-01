@@ -1,0 +1,13 @@
+name "circuits_processing"
+
+EVERY 20 TICKS DO
+    INPUT FROM source
+    OUTPUT 4 gold_ingot TO EACH universal SLOTS 2, 6, 10, 14
+    OUTPUT 4 diamond TO EACH universal SLOTS 2, 6, 10, 14
+    OUTPUT 4 certus_quartz_crystal TO EACH universal SLOTS 2, 6, 10, 14
+    OUTPUT 4 silicon TO EACH universal SLOTS 2, 6, 10, 14
+    OUTPUT 4 sky_steel_ingot TO EACH universal_accumulation SLOTS 2, 6, 10, 14
+    FORGET
+    INPUT FROM universal, universal_accumulation SLOTS 3, 7, 11, 15
+    OUTPUT TO pattern
+END

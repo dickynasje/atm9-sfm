@@ -1,0 +1,18 @@
+every 20 ticks do
+    if core has lt 1 then
+        if buffer has gt 0 draconicevolution:wyvern_relay_crystal then
+            input 4 from buffer slots 0
+        else
+            input 1 from buffer slots 0
+        end
+        output to core slots 0
+        forget
+        input from buffer
+        output to injector
+    end
+
+    if core has gt 0 then
+        input from core slots 1
+        output to pattern
+    end
+end
