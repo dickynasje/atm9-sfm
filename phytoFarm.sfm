@@ -1,0 +1,39 @@
+name "Phytogenic Farm"
+
+-- Move water from sink to phyto
+-- Move phytogrow (or any fertilizer) from buffer to slot 1 phyto
+-- Get any seed, place them again in slot 0 phyto
+-- Get all essence to crafter or any output buffer
+every 20 ticks do
+    if toggle has gt 0 then
+        input fluid:minecraft:water from sink
+        output fluid:*:* to each phyto
+        forget
+        input from fertilizer
+        output to each phyto slots 1
+        forget
+        input mysticalagriculture:*seeds from phyto slots 2-5
+        output to seedbuffer
+        forget
+        input from phyto slots 2-5
+        output to outputbuffer
+        forget
+        input mysticalagriculture:*seeds from seedbuffer
+        output 1 to each phyto slots 0
+    end
+end
+
+-- For resetting all farm
+every redstone pulse do
+    input mysticalagriculture:*seeds from phyto
+    output to seedbuffer
+    forget
+    input mysticalagriculture:*seeds from seedbuffer
+    output 1 to each phyto slots 0
+    forget
+    input thermal:upgrade_augment* from upgradebuffer
+    output 1 to each phyto slots 7
+    forget
+    input thermal_extra:machine_speed_augment* from upgradebuffer
+    output to each phyto slots 8-10
+end
