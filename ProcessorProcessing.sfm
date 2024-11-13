@@ -76,7 +76,7 @@ EVERY 20 TICKS DO
         OUTPUT TO pattern
     FORGET
 END
-
+-- Resetting inscribers material input
 EVERY 200 TICKS DO
     IF SOME inscribers HAS < 8 printed* THEN
         INPUT FROM inscribers slots 0-2, 4-6, 8-10, 12-14

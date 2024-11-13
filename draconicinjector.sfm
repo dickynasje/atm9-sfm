@@ -1,3 +1,5 @@
+name "Draconic Injector"
+-- Special case for the wyvern relay crystal cause it needs 4 per craft
 every 20 ticks do
     if core has lt 1 then
         if buffer has gt 0 draconicevolution:wyvern_relay_crystal then

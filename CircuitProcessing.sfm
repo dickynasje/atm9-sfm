@@ -1,5 +1,5 @@
 name "circuits_processing"
-
+-- Remove Universal_accumulation if there are no MEGA cells in your modpack
 EVERY 20 TICKS DO
     INPUT FROM source
     OUTPUT 4 gold_ingot TO EACH universal SLOTS 2, 6, 10, 14
