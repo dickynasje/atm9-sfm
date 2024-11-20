@@ -5,5 +5,8 @@ EVERY 20 TICKS DO
     OUTPUT 64 hostilenetworks:prediction_matrix TO EACH simulation_chamber SLOTS 1
     FORGET
     INPUT FROM energy
-    OUTPUT 2000000 forge_energy:fe:energy TO simulation_chamber SLOTS 0 
+    OUTPUT 2000000 forge_energy:fe:energy TO simulation_chamber SLOTS 0
+    FORGET
+    INPUT FROM simulation_chamber SLOTS 2, 3
+    OUTPUT TO result
 END 
