@@ -1,0 +1,9 @@
+name "HNN Simulation Chamber"
+
+EVERY 20 TICKS DO
+    INPUT FROM prediction_matrix
+    OUTPUT 64 hostilenetworks:prediction_matrix TO EACH simulation_chamber SLOTS 1
+    FORGET
+    INPUT FROM energy
+    OUTPUT 2000000 forge_energy:fe:energy TO simulation_chamber SLOTS 0 
+END 
