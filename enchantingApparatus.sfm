@@ -1,0 +1,15 @@
+name "Enchanting Apparatus"
+
+EVERY 20 ticks DO
+    INPUT FROM buffer slots 1-8
+    OUTPUT TO pedestals
+    FORGET
+    INPUT FROM buffer slots 0
+    OUTPUT TO apparatus
+    FORGET
+
+    IF apparatus HAS GT 0 THEN
+        INPUT FROM apparatus
+        OUTPUT TO pattern
+    END
+END
