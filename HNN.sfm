@@ -1,5 +1,5 @@
 name "HNN Simulation Chamber"
-
+-- WIP, THIS IS WORKED ON INTUITION AND WAS NEVER TESTED
 EVERY 20 TICKS DO
     INPUT FROM prediction_matrix
     OUTPUT 64 hostilenetworks:prediction_matrix TO EACH simulation_chamber SLOTS 1
