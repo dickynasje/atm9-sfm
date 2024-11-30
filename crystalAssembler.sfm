@@ -1,0 +1,45 @@
+name "CrystalAssemblerProcessor"
+EVERY 20 TICKS DO
+    if source HAS >= 4 printed_logic_processor AND source HAS >=4 printed_silicon AND source HAS >=4 redstone then
+        INPUT from source
+        OUTPUT RETAIN 16 redstone to EACH crystalAssemblers slots 0
+        OUTPUT RETAIN 16 printed_silicon to EACH crystalAssemblers slots 1
+        OUTPUT RETAIN 16 printed_logic_processor to EACH crystalAssemblers slots 2
+    end
+    FORGET
+
+    if source HAS >= 4 printed_calculation_processor AND source HAS >=4 printed_silicon AND source HAS >=4 redstone then
+        INPUT from source
+        OUTPUT RETAIN 16 redstone to EACH crystalAssemblers slots 0
+        OUTPUT RETAIN 16 printed_silicon to EACH crystalAssemblers slots 1
+        OUTPUT RETAIN 16 printed_calculation_processor to EACH crystalAssemblers slots 2
+    end
+    FORGET
+
+    if source HAS >= 4 printed_engineering_processor AND source HAS >=4 printed_silicon AND source HAS >=4 redstone then
+        INPUT from source
+        OUTPUT RETAIN 16 redstone to EACH crystalAssemblers slots 0
+        OUTPUT RETAIN 16 printed_silicon to EACH crystalAssemblers slots 1
+        OUTPUT RETAIN 16 printed_engineering_processor to EACH crystalAssemblers slots 2
+    end
+    FORGET
+
+    if source HAS >= 4 printed_accumulation_processor AND source HAS >=4 printed_silicon AND source HAS >=4 fluix_dust then
+        INPUT from source
+        OUTPUT RETAIN 16 fluix_dust to EACH crystalAssemblers slots 0
+        OUTPUT RETAIN 16 printed_silicon to EACH crystalAssemblers slots 1
+        OUTPUT RETAIN 16 printed_accumulation_processor to EACH crystalAssemblers slots 2
+    end
+
+    FORGET
+        INPUT logic_processor, engineering_processor, calculation_processor, accumulation_processor FROM crystalAssemblers SLOTS 9
+        OUTPUT TO pattern
+    FORGET
+END
+-- Resetting crystalAssemblers material input
+EVERY 200 TICKS DO
+    IF SOME crystalAssemblers HAS < 8 printed* THEN
+        INPUT FROM crystalAssemblers slots 0-2
+        OUTPUT TO source
+    END
+END
