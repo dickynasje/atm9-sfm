@@ -1,0 +1,20 @@
+name "Circuit_Slicer"
+
+EVERY 20 TICKS DO
+    INPUT FROM source
+    OUTPUT TO EACH slicers SLOTS 0
+    -- OUTPUT minecraft:gold_block TO EACH slicers SLOTS 0
+    -- OUTPUT minecraft:diamond_block TO EACH slicers SLOTS 0
+    -- OUTPUT extendedae:entro_block TO EACH slicers SLOTS 0
+    -- OUTPUT extendedae:silicon_block TO EACH slicers SLOTS 0
+    -- OUTPUT minecraft:iron_block TO EACH slicers SLOTS 0
+    -- OUTPUT ae2:quartz_block TO EACH slicers SLOTS 0
+    FORGET
+    INPUT FROM slicers SLOTS 1
+    OUTPUT TO pattern
+END
+
+EVERY 40 TICKS DO
+    INPUT FROM slicers SLOTS 1
+    OUTPUT TO pattern
+END
